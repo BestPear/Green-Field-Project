@@ -11,11 +11,12 @@ function Signup() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    navigate("/login")
   }
   return (
-    <div>
+    <div className="authForm-container">
       <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className= "signup-login">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -50,7 +51,7 @@ function Signup() {
         </form>
         <p>
           {" "}
-           Have you an account? <a href="/login">Login</a> here
+          Already have an account? <a href="/login">Login</a> here
         </p>
       </>
     </div>

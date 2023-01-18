@@ -4,15 +4,16 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [username, setUsername] = useState("");
   const [pass, setPass] = useState("");
-  const navigate = useNavigate("")
+  const navigate = useNavigate("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/home");
   };
   return (
-    <div>
+    <div className="authForm-container">
       <>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className= "signup-login">
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -35,7 +36,10 @@ function Login() {
           ></input>
           <button type="submit"> LOGIN </button>
         </form>
-        <p> Don't have an account? <a href="/signup">Sign Up</a> here</p>
+        <p>
+          {" "}
+          Don't have an account? <a href="/signup">Sign Up</a> here
+        </p>
       </>
     </div>
   );
